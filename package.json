@@ -1,0 +1,41 @@
+{
+  "name": "async_json",
+  "version": "0.0.1",
+  "description": "async json for the browser and node.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nathanfaucett/async_json.git"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "example": "comn -f example/src/index.js -o example/index.js",
+    "test": "npm run test-node",
+    "test-node": "node ./test | ./node_modules/.bin/tap-spec",
+    "test-node-raw": "node ./test",
+    "test-browser-local": "zuul --local 8080 --ui tape -- ./test"
+  },
+  "keywords": [
+    "async_json",
+    "async_json.js"
+  ],
+  "author": "Nathan Faucett",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-jsbeautifier": "^0.2.7",
+    "tap-spec": "^4.0.0",
+    "tape": "^4.0.0",
+    "zuul": "^3.0.0"
+  },
+  "dependencies": {
+    "environment": "git://github.com/nathanfaucett/environment.git",
+    "extend": "git://github.com/nathanfaucett/extend.git",
+    "is_function": "git://github.com/nathanfaucett/is_function.git",
+    "is_object": "git://github.com/nathanfaucett/is_object.git",
+    "messenger": "git://github.com/nathanfaucett/messenger.git",
+    "messenger_adapter": "git://github.com/nathanfaucett/messenger_adapter.git",
+    "messenger_worker_adapter": "git://github.com/nathanfaucett/messenger_worker_adapter.git"
+  }
+}
