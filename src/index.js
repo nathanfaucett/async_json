@@ -36,7 +36,7 @@ asyncJSON.stringify = function stringify(value, replacer, space, callback) {
         replacer = undefined;
         space = undefined;
     }
-    
+
     messenger.emit("stringify", {
         value: value,
         replacer: replacer,
