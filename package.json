@@ -1,7 +1,7 @@
 {
   "name": "async_json",
   "version": "0.0.1",
-  "description": "async json for the browser and node.js",
+  "description": "async JSON parse/stringify for the browser and node.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/nathanfaucett/async_json.git"

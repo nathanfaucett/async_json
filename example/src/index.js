@@ -1,4 +1,4 @@
-var asyncJSON = require("../..");
+global.asyncJSON = require("../..");
 
 
 console.time("async");

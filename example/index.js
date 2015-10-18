@@ -39,7 +39,7 @@
 }([
 function(require, exports, module, global) {
 
-var asyncJSON = require(1);
+global.asyncJSON = require(1);
 
 
 console.time("async");
@@ -66,13 +66,14 @@ JSON.parse(JSON.stringify({
 }));
 console.timeEnd("sync");
 
+
 },
 function(require, exports, module, global) {
 
 var isFunction = require(2),
     isObject = require(3),
-    extend = require(5),
-    messenger = require(13);
+    extend = require(7),
+    messenger = require(15);
 
 
 var asyncJSON = exports;
@@ -159,6 +160,10 @@ function isObject(value) {
 },
 function(require, exports, module, global) {
 
+var isNull = require(5),
+    isUndefined = require(6);
+
+
 module.exports = isNullOrUndefined;
 
 /**
@@ -174,15 +179,37 @@ module.exports = isNullOrUndefined;
     isNullOrUndefined(undefined);   // returns true
     isNullOrUndefined("string");    // returns false
 **/
-function isNullOrUndefined(obj) {
-    return (obj === null || obj === void 0);
+function isNullOrUndefined(value) {
+    return isNull(value) || isUndefined(value);
 }
 
 
 },
 function(require, exports, module, global) {
 
-var keys = require(6);
+module.exports = isNull;
+
+
+function isNull(value) {
+    return value === null;
+}
+
+
+},
+function(require, exports, module, global) {
+
+module.exports = isUndefined;
+
+
+function isUndefined(value) {
+    return value === void(0);
+}
+
+
+},
+function(require, exports, module, global) {
+
+var keys = require(8);
 
 
 module.exports = extend;
@@ -215,8 +242,8 @@ function baseExtend(a, b) {
 },
 function(require, exports, module, global) {
 
-var has = require(7),
-    isNative = require(8),
+var has = require(9),
+    isNative = require(10),
     isNullOrUndefined = require(4),
     isObject = require(3);
 
@@ -256,8 +283,8 @@ if (!isNative(nativeKeys)) {
 },
 function(require, exports, module, global) {
 
-var isNative = require(8),
-    getPrototypeOf = require(12),
+var isNative = require(10),
+    getPrototypeOf = require(14),
     isNullOrUndefined = require(4);
 
 
@@ -298,7 +325,7 @@ function(require, exports, module, global) {
 
 var isFunction = require(2),
     isNullOrUndefined = require(4),
-    escapeRegExp = require(9);
+    escapeRegExp = require(11);
 
 
 var reHostCtor = /^\[object .+?Constructor\]$/,
@@ -345,7 +372,7 @@ isHostObject = function isHostObject(value) {
 },
 function(require, exports, module, global) {
 
-var toString = require(10);
+var toString = require(12);
 
 
 var reRegExpChars = /[.*+?\^${}()|\[\]\/\\]/g,
@@ -368,7 +395,7 @@ function escapeRegExp(string) {
 },
 function(require, exports, module, global) {
 
-var isString = require(11),
+var isString = require(13),
     isNullOrUndefined = require(4);
 
 
@@ -392,8 +419,8 @@ function(require, exports, module, global) {
 module.exports = isString;
 
 
-function isString(obj) {
-    return typeof(obj) === "string" || false;
+function isString(value) {
+    return typeof(value) === "string" || false;
 }
 
 
@@ -401,7 +428,7 @@ function isString(obj) {
 function(require, exports, module, global) {
 
 var isObject = require(3),
-    isNative = require(8),
+    isNative = require(10),
     isNullOrUndefined = require(4);
 
 
@@ -440,9 +467,9 @@ if (isNative(nativeGetPrototypeOf)) {
 },
 function(require, exports, module, global) {
 
-var environment = require(14),
-    Messenger = require(15),
-    MessengerWorkerAdapter = require(16),
+var environment = require(16),
+    Messenger = require(17),
+    MessengerWorkerAdapter = require(18),
     messengerAdapter;
 
 
@@ -450,11 +477,11 @@ var messenger;
 
 
 if (typeof(Worker) === "undefined" || environment.node) {
-    messengerAdapter = require(17);
-    require(19);
+    messengerAdapter = require(19);
+    require(21);
     messenger = new Messenger(messengerAdapter.client);
 } else {
-    messenger = new Messenger(new MessengerWorkerAdapter(require(21)));
+    messenger = new Messenger(new MessengerWorkerAdapter(require(23)));
 }
 
 
@@ -525,7 +552,7 @@ MessengerPrototype.onMessage = function(message) {
         callbacks = this.__callbacks,
         callback = callbacks[id],
         listeners, adapter;
-    
+
     if (name) {
         listeners = this.__listeners;
         adapter = this.__adapter;
@@ -621,8 +648,8 @@ function isMatch(messageId, id) {
 },
 function(require, exports, module, global) {
 
-var isString = require(11),
-    environment = require(14);
+var isString = require(13),
+    environment = require(16);
 
 
 var MessengerWorkerAdapterPrototype,
@@ -656,7 +683,7 @@ MessengerWorkerAdapterPrototype.postMessage = function(data) {
 },
 function(require, exports, module, global) {
 
-var createMessengerAdapter = require(18);
+var createMessengerAdapter = require(20);
 
 
 module.exports = createMessengerAdapter();
@@ -713,9 +740,9 @@ MessengerAdapterPrototype.postMessage = function(data) {
 },
 function(require, exports, module, global) {
 
-var process = require(20);
-var Messenger = require(15),
-    messengerAdapter = require(17);
+var process = require(22);
+var Messenger = require(17),
+    messengerAdapter = require(19);
 
 
 var messenger = new Messenger(messengerAdapter.server);
