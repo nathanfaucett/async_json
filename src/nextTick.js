@@ -5,7 +5,7 @@ var Messenger = require("messenger"),
 var messenger = new Messenger(messengerAdapter.server);
 
 
-messenger.on("parse", function(data, callback) {
+messenger.on("parse", function onParse(data, callback) {
     process.nextTick(function onNextTick() {
         var json;
 
@@ -19,7 +19,7 @@ messenger.on("parse", function(data, callback) {
     });
 });
 
-messenger.on("stringify", function(data, callback) {
+messenger.on("stringify", function onStringify(data, callback) {
     process.nextTick(function onNextTick() {
         var string;
 
