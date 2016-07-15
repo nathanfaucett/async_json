@@ -1,6 +1,6 @@
-var isFunction = require("is_function"),
-    isObject = require("is_object"),
-    extend = require("extend"),
+var isFunction = require("@nathanfaucett/is_function"),
+    isObject = require("@nathanfaucett/is_object"),
+    extend = require("@nathanfaucett/extend"),
     messenger = require("./messenger");
 
 

@@ -1,7 +1,7 @@
 {
-  "name": "async_json",
+  "name": "@nathanfaucett/async_json",
   "version": "0.0.1",
-  "description": "async JSON parse/stringify for the browser and node.js",
+  "description": "async JSON parse/stringify",
   "repository": {
     "type": "git",
     "url": "https://github.com/nathanfaucett/async_json.git"
@@ -22,20 +22,20 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-jsbeautifier": "^0.2.7",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-jsbeautifier": "^0.2.13",
     "tap-spec": "^4.0.0",
     "tape": "^4.0.0",
     "zuul": "^3.0.0"
   },
   "dependencies": {
-    "environment": "git://github.com/nathanfaucett/environment.git",
-    "extend": "git://github.com/nathanfaucett/extend.git",
-    "is_function": "git://github.com/nathanfaucett/is_function.git",
-    "is_object": "git://github.com/nathanfaucett/is_object.git",
-    "messenger": "git://github.com/nathanfaucett/messenger.git",
-    "messenger_adapter": "git://github.com/nathanfaucett/messenger_adapter.git",
-    "messenger_worker_adapter": "git://github.com/nathanfaucett/messenger_worker_adapter.git"
+    "@nathanfaucett/environment": "^0.0.1",
+    "@nathanfaucett/extend": "^0.0.1",
+    "@nathanfaucett/is_function": "^0.0.1",
+    "@nathanfaucett/is_object": "^0.0.1",
+    "@nathanfaucett/messenger": "^0.0.1",
+    "@nathanfaucett/messenger_adapter": "^0.0.1",
+    "@nathanfaucett/messenger_worker_adapter": "^0.0.1"
   }
 }

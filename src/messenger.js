@@ -1,6 +1,6 @@
-var environment = require("environment"),
-    Messenger = require("messenger"),
-    MessengerWorkerAdapter = require("messenger_worker_adapter"),
+var environment = require("@nathanfaucett/environment"),
+    Messenger = require("@nathanfaucett/messenger"),
+    MessengerWorkerAdapter = require("@nathanfaucett/messenger_worker_adapter"),
     messengerAdapter;
 
 

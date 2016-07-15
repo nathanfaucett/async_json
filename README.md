@@ -1,16 +1,16 @@
 asyncJSON
 =======
 
-async JSON parse/stringify for the browser and node.js
+async JSON parse/stringify
 
 # Install
 ```bash
-$ npm install git://github.com/nathanfaucett/async_json --save
+$ npm install @nathanfaucett/async_json --save
 ```
 
 # Usage
 ```javascript
-var asyncJSON = require("async_json");
+var asyncJSON = require("@nathanfaucett/async_json");
 
 
 asyncJSON.stringify({
