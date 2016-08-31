@@ -5,15 +5,15 @@ var tape = require("tape"),
 tape("asyncJSON(object)", function(assert) {
     asyncJSON.stringify({
         key: "value"
-    }, function(error, json) {
+    }, function onStringify(error, json) {
         if (error) {
-            throw error;
+            assert.end(error);
         } else {
             assert.equal(json, "{\"key\":\"value\"}");
 
-            asyncJSON.parse(json, function(error, json) {
+            asyncJSON.parse(json, function onParse(error, json) {
                 if (error) {
-                    throw error;
+                    assert.end(error);
                 } else {
                     assert.deepEqual(json, {
                         key: "value"

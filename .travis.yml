@@ -1,8 +1,16 @@
 language: node_js
-
 node_js:
-  - '0.12'
+  - "6"
+  - "6.1"
+  - "5.11"
+  - "4.1"
+  - "4.0"
+  - "0.12"
+  - "0.11"
+  - "0.10"
+  - "stable"
+  - "iojs"
 
-before_install: npm install -g grunt-cli
+before_install: npm install -g @nathanfaucett/task-cli
 
-script: 'grunt jshint && npm test'
+script: 'task jshint && npm test'
