@@ -1,6 +1,6 @@
 {
   "name": "@nathanfaucett/async_json",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "async JSON parse/stringify",
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
   "readmeFilename": "README.md",
   "devDependencies": {
     "@nathanfaucett/comn": "0.0.11",
-    "@nathanfaucett/task": "^0.0.5",
+    "@nathanfaucett/task": "^0.0.7",
     "gulp-jsbeautifier": "^2.0.3",
     "gulp-jshint": "^2.0.1",
     "jshint": "^2.9.3",
@@ -33,10 +33,10 @@
   },
   "dependencies": {
     "@nathanfaucett/environment": "^0.0.2",
-    "@nathanfaucett/extend": "^0.0.1",
+    "@nathanfaucett/extend": "^0.0.2",
     "@nathanfaucett/is_function": "^0.0.1",
     "@nathanfaucett/is_object": "^0.0.1",
-    "@nathanfaucett/messenger": "^0.0.2",
+    "@nathanfaucett/messenger": "^0.0.3",
     "@nathanfaucett/messenger_adapter": "^0.0.1",
     "@nathanfaucett/messenger_worker_adapter": "^0.0.1"
   }
